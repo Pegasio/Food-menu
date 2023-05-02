@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="menu-container">
+		<div class="menu-left">
+			<h2 class="menu-title">Menu</h2>
+			<p class="menu-subtitle">We change our menu every season. Here is what we are currently dishing up.</p>
+			<div class="menu-buttons">
+				<button class="menu-button active" data-image="images/food-menu.jpg">Food Menu</button>
+				<button class="menu-button" data-image="images/drinks-menu.jpg">Drinks Menu</button>
+				<button class="menu-button" data-image="images/takeaway-menu-2.jpg">Takeaway Menu</button>
+			</div>
+		</div>
+		<div class="menu-right">
+			<img class="menu-image" src="images/food-menu.jpg" alt="Food Menu">
+		</div>
+	</div>
+	<script>
+		const buttons = document.querySelectorAll('.menu-button');
+		const image = document.querySelector('.menu-image');
+
+		buttons.forEach((button) => {
+			button.addEventListener('click', () => {
+				buttons.forEach((btn) => btn.classList.remove('active'));
+				button.classList.add('active');
+				const imageUrl = button.dataset.image;
+
+				image.classList.add('hide'); // добавить класс `hide`
+				image.classList.add('fade-out');
+				setTimeout(() => {
+					image.setAttribute('src', imageUrl);
+					image.classList.remove('fade-out');
+				}, 500);
+				image.setAttribute('alt', button.textContent);
+
+				// удалить класс `hide` после загрузки нового изображения
+				image.onload = () => {
+					image.classList.remove('hide');
+				};
+			});
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+/* Сброс стилей браузера */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+ }
+ 
+ /* Сброс стилей для элементов формы */
+ button,
+ input {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	background: none;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+ }
+ 
+ /* Сброс стилей для списков */
+ ul,
+ ol {
+	list-style: none;
+ }
+ 
+ /* Сброс стилей для ссылок */
+ a {
+	text-decoration: none;
+	color: inherit;
+ }
+ 
+ /* Сброс стилей для изображений */
+ img {
+	max-width: 100%;
+	height: auto;
+ }
+
+ 
+body{
+	background: #E9E9E3;
+}
+.menu-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 120px 56px;
+ }
+ 
+ .menu-left {
+	width: 50%;
+ }
+ 
+ .menu-right {
+	width: 50%;
+	text-align: center;
+ }
+ 
+ .menu-title {
+	font-family: 'Azeret Mono';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 22px;
+	color: #6F6F64;
+	margin-bottom: 10px;
+ }
+ 
+ .menu-subtitle {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 45px;
+	color: #6F6F64;
+	margin-bottom: 30px;
+	max-width: 540px;
+ }
+ 
+ .menu-buttons {
+	display: flex;
+	margin-bottom: 50px;
+	flex-direction: column;
+ }
+ 
+ .menu-button {
+	width: 81%;
+	height: 58px;
+	border: 2px solid #6F6F64;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 28px;
+	color: #6F6F64;
+	background-color: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	margin-top: 20px;
+ }
+ 
+ .menu-button.active,
+ .menu-button:hover {
+	background-color: #6F6F64;
+	color: #ffffff;
+ }
+ 
+ .menu-image {
+	width: 100%;
+	max-width: 1200px; /* Максимальная ширина изображения */
+	height: auto;
+	transition: opacity 0.5s ease;
+	opacity: 1;
+ }
+ .menu-image.fade-out {
+	opacity: 0;
+ }
+ 
+ /* Стили для мобильных устройств */
+@media (max-width: 767px) {
+	.menu-container {
+	  flex-direction: column;
+	  align-items: center;
+	  padding: 80px 20px;
+	}
+	.menu-left, .menu-right {
+	  width: 100%;
+	  text-align: center;
+	}
+	.menu-title {
+	  font-size: 16px;
+	  line-height: 20px;
+	  margin-bottom: 8px;
+	}
+	.menu-subtitle {
+	  font-size: 28px;
+	  line-height: 40px;
+	  margin-bottom: 20px;
+	}
+	.menu-buttons {
+	  flex-direction: row;
+	  justify-content: center;
+	  flex-wrap: wrap;
+	  margin-bottom: 40px;
+	}
+	.menu-button {
+	  width: 100%;
+	  max-width: 260px;
+	  margin: 10px;
+	}
+	.menu-image {
+	  max-width: 100%;
+	  height: auto;
+	}
+ }
